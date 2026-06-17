@@ -5,167 +5,219 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marc Atsuvia — Software Engineer (AI/ML)</title>
 <meta name="description" content="Marc Atsuvia — Software Engineer specializing in AI/ML. 6+ years building full-stack web, mobile, and ML systems. Based in Lomé, Togo.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111'/><text x='16' y='22' font-family='Helvetica,Arial' font-size='16' fill='%23fff' text-anchor='middle'>M</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1117'/><text x='16' y='22' font-family='Helvetica,Arial' font-size='16' fill='%23e6edf6' text-anchor='middle'>M</text></svg>">
 <meta property="og:title" content="Marc Atsuvia — Software Engineer (AI/ML)">
 <meta property="og:description" content="6+ years building full-stack & ML systems. ML pipelines, LLM/RAG, MLOps.">
 <meta property="og:type" content="website">
 <style>
   :root{
-    --bg:#ffffff; --ink:#111111; --muted:#6b6b6b; --line:#e6e6e6; --hover:#000;
-    --max:720px;
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c222b; --line:#30363d;
+    --txt:#e6edf6; --muted:#8b949e; --accent:#e6edf6;
+    --max:960px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased; font-feature-settings:"kern";
+    margin:0; background:var(--bg); color:var(--txt);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s}
-  a:hover{border-color:var(--hover)}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-  section{padding:48px 0;border-top:1px solid var(--line)}
-  h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 28px}
+  a{color:var(--txt);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 28px;font-weight:600}
 
-  /* header */
-  header.top{padding:96px 0 24px}
-  header.top h1{font-size:clamp(28px,5vw,40px);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin:0 0 6px}
-  header.top .role{color:var(--muted);font-size:16px;margin:0 0 28px}
-  header.top p.lead{font-size:18px;line-height:1.6;margin:0 0 28px;max-width:600px}
-  .contacts{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:15px}
-  .facts{margin-top:24px;color:var(--muted);font-size:14px;line-height:1.9}
-  .facts span:not(:last-child)::after{content:"·";margin:0 10px;color:var(--line)}
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(13,17,23,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .brand{font-weight:700;color:var(--txt)}
+  nav .links a{color:var(--muted);margin-left:22px;font-size:14px}
+  nav .links a:hover{color:var(--txt);text-decoration:none}
+  @media(max-width:560px){nav .links a:not(.cta){display:none}}
+  .cta{border:1px solid var(--line);color:var(--txt)!important;padding:7px 14px;border-radius:8px}
+  .cta:hover{border-color:var(--muted);text-decoration:none}
 
-  /* projects as a list */
-  .proj{border-top:1px solid var(--line);padding:22px 0}
-  .proj:first-of-type{border-top:0;padding-top:0}
-  .proj .head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-  .proj h3{font-size:17px;font-weight:600;margin:0}
-  .proj h3 a{border-bottom:0}
-  .proj h3 a:hover{border-bottom:1px solid var(--hover)}
-  .proj .stack{color:var(--muted);font-size:13px;letter-spacing:.02em;white-space:nowrap}
-  .proj p{color:#333;font-size:15px;margin:8px 0 0;max-width:600px}
+  /* hero */
+  .hero{padding:84px 0 56px}
+  .hero .eyebrow{color:var(--muted);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:13px;margin:0 0 16px}
+  .hero h1{font-size:clamp(34px,6vw,56px);line-height:1.05;margin:0 0 18px;letter-spacing:-.02em;font-weight:600}
+  .hero p.lead{font-size:clamp(17px,2.5vw,20px);color:var(--muted);max-width:640px;margin:0 0 28px}
+  .btnrow{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15px}
+  .btn.primary{background:var(--txt);color:var(--bg)}
+  .btn.primary:hover{opacity:.88;text-decoration:none}
+  .btn.ghost{border:1px solid var(--line);color:var(--txt)}
+  .btn.ghost:hover{border-color:var(--muted);text-decoration:none}
+  .meta{margin-top:28px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:18px}
+  .meta b{color:var(--txt);font-weight:600}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .stat .num{font-size:26px;font-weight:700;color:var(--txt)}
+  .stat .lbl{font-size:13px;color:var(--muted);margin-top:2px}
+
+  /* projects */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+  .card:hover{border-color:var(--muted);transform:translateY(-2px)}
+  .card .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .card h3{margin:0;font-size:19px}
+  .card .tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap}
+  .card p{color:var(--muted);font-size:15px;margin:12px 0 16px;flex:1}
+  .stacks{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+  .stacks span{font-size:12px;color:var(--txt);background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 9px}
+  .card .links a{font-size:14px;margin-right:16px;font-weight:600}
 
   /* skills */
-  .skill{display:grid;grid-template-columns:140px 1fr;gap:8px 24px;padding:10px 0;border-top:1px solid var(--line)}
-  .skill:first-child{border-top:0}
-  .skill .k{color:var(--muted);font-size:14px}
-  .skill .v{font-size:15px}
-  @media(max-width:560px){.skill{grid-template-columns:1fr;gap:2px}}
+  .skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:680px){.skillgrid{grid-template-columns:1fr}}
+  .skillrow{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .skillrow .k{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
+  .skillrow .v{color:var(--txt);font-size:15px}
 
   /* experience */
-  .job{padding:0 0 26px}
-  .job:last-child{padding-bottom:0}
-  .job .r{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-  .job h3{font-size:16px;font-weight:600;margin:0}
-  .job .when{color:var(--muted);font-size:14px;white-space:nowrap}
-  .job p{color:#333;font-size:15px;margin:6px 0 0;max-width:600px}
+  .xp{border-left:2px solid var(--line);padding-left:22px;margin-left:4px}
+  .xp .item{margin-bottom:26px;position:relative}
+  .xp .item:last-child{margin-bottom:0}
+  .xp .item::before{content:"";position:absolute;left:-29px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--muted)}
+  .xp h3{margin:0;font-size:17px}
+  .xp .when{color:var(--muted);font-size:14px;margin:2px 0 6px}
+  .xp p{color:var(--muted);font-size:15px;margin:0}
 
-  footer{border-top:1px solid var(--line);padding:32px 0 64px;color:var(--muted);font-size:14px}
-  footer .contacts{margin-top:10px}
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px;text-align:center}
+  footer a{margin:0 10px}
 </style>
 </head>
 <body>
 
-<header class="top"><div class="wrap">
-  <h1>Marc Atsuvia</h1>
-  <p class="role">Software Engineer — AI / ML</p>
-  <p class="lead">Six years building full-stack web, mobile, and machine-learning systems across fintech, healthcare, and logistics. Currently focused on ML pipelines, LLM/RAG applications, and end-to-end MLOps.</p>
-  <div class="contacts">
-    <a href="https://github.com/cucusgeek99" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/marc-atsuvia-758b1b180" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:marcatsuvia@gmail.com">marcatsuvia@gmail.com</a>
+<nav><div class="wrap">
+  <span class="brand">Marc Atsuvia</span>
+  <div class="links">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a class="cta" href="mailto:marcatsuvia@gmail.com">Contact</a>
   </div>
-  <div class="facts">
-    <span>Lomé, Togo</span><span>M.S. Artificial Intelligence (in progress)</span><span>French / English</span>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Software Engineer — AI / ML</p>
+  <h1>Building intelligent systems<br>from data to production.</h1>
+  <p class="lead">6+ years shipping full-stack web, mobile, and machine-learning systems across fintech, healthcare, and logistics. Now focused on ML pipelines, LLM/RAG applications, and end-to-end MLOps.</p>
+  <div class="btnrow">
+    <a class="btn primary" href="https://github.com/cucusgeek99" target="_blank" rel="noopener">View GitHub</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/marc-atsuvia-758b1b180" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="mailto:marcatsuvia@gmail.com">Email</a>
+  </div>
+  <div class="meta">
+    <span>Lomé, Togo</span>
+    <span><b>M.S. Artificial Intelligence</b> (in progress)</span>
+    <span>French · English</span>
   </div>
 </div></header>
 
+<section id="about"><div class="wrap">
+  <h2>By the numbers</h2>
+  <div class="stats">
+    <div class="stat"><div class="num">6+</div><div class="lbl">Years engineering</div></div>
+    <div class="stat"><div class="num">20+</div><div class="lbl">Apps shipped to production</div></div>
+    <div class="stat"><div class="num">307K+</div><div class="lbl">Records modeled (credit risk)</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">Open-source AI projects</div></div>
+  </div>
+</div></section>
+
 <section id="projects"><div class="wrap">
-  <h2>Selected Work</h2>
+  <h2>Featured Projects</h2>
+  <div class="grid">
 
-  <div class="proj">
-    <div class="head">
-      <h3><a href="https://github.com/cucusgeek99/autotrader" target="_blank" rel="noopener">Autotrader</a></h3>
-      <span class="stack">Python · Optuna · ccxt</span>
+    <div class="card">
+      <div class="top"><h3>Autotrader</h3><span class="tag">ML · Research</span></div>
+      <p>A self-tuning crypto research lab: walk-forward (nested) cross-validation, Optuna hyperparameter search, and a regime-aware knowledge base. Applies rigorous statistical validation — rank-IC, deflated Sharpe, and multiple-testing correction — with an LLM advisor in the loop.</p>
+      <div class="stacks"><span>Python</span><span>ccxt</span><span>Optuna</span><span>Anthropic API</span></div>
+      <div class="links"><a href="https://github.com/cucusgeek99/autotrader" target="_blank" rel="noopener">Code</a></div>
     </div>
-    <p>A self-tuning crypto research lab using walk-forward (nested) cross-validation, Optuna hyperparameter search, and a regime-aware knowledge base. Applies rigorous statistical validation — rank-IC, deflated Sharpe, and multiple-testing correction — with an LLM advisor in the loop.</p>
-  </div>
 
-  <div class="proj">
-    <div class="head">
-      <h3><a href="https://github.com/cucusgeek99/supportai" target="_blank" rel="noopener">SupportAI</a></h3>
-      <span class="stack">Next.js · TypeScript · Gemini</span>
+    <div class="card">
+      <div class="top"><h3>SupportAI</h3><span class="tag">LLM · RAG</span></div>
+      <p>A retrieval-augmented support chatbot built on Next.js 15 + Google Gemini. Semantic retrieval over a knowledge base with grounded, cited answers and confidence scoring — engineered to eliminate hallucination by anchoring every response in retrieved context.</p>
+      <div class="stacks"><span>Next.js</span><span>TypeScript</span><span>Gemini</span><span>Embeddings</span></div>
+      <div class="links"><a href="https://github.com/cucusgeek99/supportai" target="_blank" rel="noopener">Code</a></div>
     </div>
-    <p>A retrieval-augmented support chatbot built on Next.js 15 and Google Gemini. Semantic retrieval over a knowledge base with grounded, cited answers and confidence scoring — engineered to eliminate hallucination by anchoring every response in retrieved context.</p>
-  </div>
 
-  <div class="proj">
-    <div class="head">
-      <h3><a href="https://github.com/cucusgeek99/client-segmentation" target="_blank" rel="noopener">Client Segmentation</a></h3>
-      <span class="stack">Python · scikit-learn</span>
+    <div class="card">
+      <div class="top"><h3>Client Segmentation</h3><span class="tag">ML · Analytics</span></div>
+      <p>Customer segmentation for cargo/logistics using RFM scoring and K-Means clustering, with automated Excel/Word report generation. Ships on synthetic demo data so the full pipeline runs end-to-end with no real client data.</p>
+      <div class="stacks"><span>Python</span><span>scikit-learn</span><span>K-Means</span><span>pandas</span></div>
+      <div class="links"><a href="https://github.com/cucusgeek99/client-segmentation" target="_blank" rel="noopener">Code</a></div>
     </div>
-    <p>Customer segmentation for cargo and logistics using RFM scoring and K-Means clustering, with automated Excel and Word report generation. Runs end-to-end on synthetic demo data, with no real client data.</p>
-  </div>
 
-  <div class="proj">
-    <div class="head">
-      <h3><a href="https://github.com/cucusgeek99/nutripro" target="_blank" rel="noopener">NutriPro</a></h3>
-      <span class="stack">Next.js · React · Gemini</span>
+    <div class="card">
+      <div class="top"><h3>NutriPro</h3><span class="tag">Generative AI</span></div>
+      <p>A generative-AI app that produces profession-specific nutrition plans via streaming LLM responses, tailoring recommendations to a user's job and daily demands.</p>
+      <div class="stacks"><span>Next.js</span><span>React</span><span>Gemini</span><span>Streaming</span></div>
+      <div class="links"><a href="https://github.com/cucusgeek99/nutripro" target="_blank" rel="noopener">Code</a></div>
     </div>
-    <p>A generative-AI application that produces profession-specific nutrition plans via streaming LLM responses, tailoring recommendations to a user's job and daily demands.</p>
-  </div>
 
-  <div class="proj">
-    <div class="head">
-      <h3><a href="https://github.com/cucusgeek99/credit-scoring-reg08" target="_blank" rel="noopener">Credit Scoring System</a></h3>
-      <span class="stack">Python · LightGBM · MLflow</span>
+    <div class="card">
+      <div class="top"><h3>Credit Scoring System</h3><span class="tag">ML Pipeline</span></div>
+      <p>End-to-end ML pipeline for loan-default prediction on 307K+ applicants (Home Credit), engineering 199 features across 7 relational tables. A LightGBM model reaches 0.78 ROC-AUC with stable 5-fold CV (0.776 ± 0.004), served via FastAPI with MLflow tracking, SHAP explainability, and Docker. <em>(Academic group project.)</em></p>
+      <div class="stacks"><span>Python</span><span>LightGBM</span><span>MLflow</span><span>SHAP</span><span>FastAPI</span><span>Docker</span></div>
+      <div class="links"><a href="https://github.com/cucusgeek99/credit-scoring-reg08" target="_blank" rel="noopener">Code</a></div>
     </div>
-    <p>End-to-end ML pipeline for loan-default prediction on 307K+ applicants (Home Credit), engineering 199 features across 7 relational tables. A LightGBM model reaches 0.78 ROC-AUC with stable 5-fold cross-validation (0.776 ± 0.004), served via FastAPI with MLflow tracking, SHAP explainability, and Docker. Academic group project.</p>
-  </div>
 
-  <div class="proj">
-    <div class="head">
-      <h3><a href="https://github.com/cucusgeek99?tab=repositories" target="_blank" rel="noopener">More on GitHub</a></h3>
-      <span class="stack">Next.js · NestJS · Laravel · Flutter</span>
+    <div class="card">
+      <div class="top"><h3>More on GitHub</h3><span class="tag">Full-Stack</span></div>
+      <p>Production web & mobile work — SaaS platforms, cargo/logistics tooling, and cross-platform mobile apps across fintech, healthcare, and e-commerce. Built with Next.js, NestJS, Laravel, Django, and Flutter.</p>
+      <div class="stacks"><span>Next.js</span><span>NestJS</span><span>Laravel</span><span>Flutter</span></div>
+      <div class="links"><a href="https://github.com/cucusgeek99?tab=repositories" target="_blank" rel="noopener">All repositories</a></div>
     </div>
-    <p>Production web and mobile work — SaaS platforms, cargo and logistics tooling, and cross-platform mobile apps across fintech, healthcare, and e-commerce.</p>
-  </div>
 
+  </div>
 </div></section>
 
 <section id="skills"><div class="wrap">
-  <h2>Skills</h2>
-  <div class="skill"><div class="k">Languages</div><div class="v">Python, JavaScript, TypeScript, Dart, PHP, Solidity, SQL</div></div>
-  <div class="skill"><div class="k">AI / ML</div><div class="v">scikit-learn, LightGBM, MLflow, SHAP, Optuna, RAG, LLMs (Gemini, Claude), vector embeddings</div></div>
-  <div class="skill"><div class="k">Web & Mobile</div><div class="v">React, Next.js, Node.js, NestJS, Flutter, Laravel, Django, Firebase</div></div>
-  <div class="skill"><div class="k">DevOps & Data</div><div class="v">Docker, GitHub Actions (CI/CD), FastAPI, PostgreSQL, MySQL, SQL Server</div></div>
+  <h2>Technical Skills</h2>
+  <div class="skillgrid">
+    <div class="skillrow"><div class="k">Languages</div><div class="v">Python, JavaScript, TypeScript, Dart, PHP, Solidity, SQL</div></div>
+    <div class="skillrow"><div class="k">AI / ML</div><div class="v">scikit-learn, LightGBM, MLflow, SHAP, Optuna, RAG, LLMs (Gemini, Claude), vector embeddings</div></div>
+    <div class="skillrow"><div class="k">Web & Mobile</div><div class="v">React, Next.js, Node.js, NestJS, Flutter, Laravel, Django, Firebase</div></div>
+    <div class="skillrow"><div class="k">DevOps & Data</div><div class="v">Docker, GitHub Actions (CI/CD), FastAPI, PostgreSQL, MySQL, SQL Server</div></div>
+  </div>
 </div></section>
 
 <section id="experience"><div class="wrap">
   <h2>Experience</h2>
-  <div class="job">
-    <div class="r"><h3>Software Engineer — Espace Performance SARL</h3><span class="when">Aug 2023 – Mar 2025</span></div>
-    <p>Built and shipped 6+ production web and mobile applications across healthcare and fintech (Next.js, Flutter, Django), including a doctor appointment platform, a patient-transfer system, and pharmacy and civil-registry tooling.</p>
-  </div>
-  <div class="job">
-    <div class="r"><h3>Freelance Software Engineer — Remote</h3><span class="when">2020 – Present</span></div>
-    <p>Delivered 10+ client projects across e-commerce, fintech, and marketplaces (Laravel, Next.js, Flutter), including crypto trading backends and two-sided marketplace apps.</p>
-  </div>
-  <div class="job">
-    <div class="r"><h3>Software Developer — Elimke Trading</h3><span class="when">Jan 2021 – Dec 2022</span></div>
-    <p>Built an e-commerce platform (~200 orders/month) and a real-time parcel-tracking app, plus a warehouse process system streamlining ~60 operations daily.</p>
+  <div class="xp">
+    <div class="item">
+      <h3>Software Engineer — Espace Performance SARL</h3>
+      <div class="when">Aug 2023 – Mar 2025 · Lomé, Togo</div>
+      <p>Built and shipped 6+ production web and mobile applications across healthcare and fintech (Next.js, Flutter, Django) — including a doctor appointment platform, a patient-transfer system, and pharmacy/civil-registry tooling.</p>
+    </div>
+    <div class="item">
+      <h3>Freelance Software Engineer — Remote</h3>
+      <div class="when">2020 – Present</div>
+      <p>Delivered 10+ client projects across e-commerce, fintech, and marketplaces (Laravel, Next.js, Flutter), including crypto trading backends and two-sided marketplace apps.</p>
+    </div>
+    <div class="item">
+      <h3>Software Developer — Elimke Trading</h3>
+      <div class="when">Jan 2021 – Dec 2022 · Lomé, Togo</div>
+      <p>Built an e-commerce platform (~200 orders/month) and a real-time parcel-tracking app, plus a warehouse process system streamlining ~60 operations daily.</p>
+    </div>
   </div>
 </div></section>
 
-<footer><div class="wrap">
-  <div>Marc Atsuvia — Software Engineer, AI / ML — Lomé, Togo</div>
-  <div class="contacts">
+<footer>
+  <div>Marc Atsuvia — Software Engineer (AI/ML) — Lomé, Togo</div>
+  <div style="margin-top:10px">
     <a href="https://github.com/cucusgeek99" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.linkedin.com/in/marc-atsuvia-758b1b180" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:marcatsuvia@gmail.com">Email</a>
   </div>
-</div></footer>
+</footer>
 
 </body>
 </html>
