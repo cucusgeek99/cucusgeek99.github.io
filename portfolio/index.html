@@ -112,12 +112,6 @@ dialog button{position:absolute;top:-14px;right:-6px;width:36px;height:36px;bord
   <h2>TradeFlow</h2>
   <p class="tagline">ERP mobile pour les commerçants importateurs d'Afrique francophone : stock, commandes à l'étranger, suivi d'expéditions, marges et Mobile Money. Distribué par les sociétés de fret.</p>
 
-  <div class="stats">
-    <div class="stat"><b>≈ 320</b><span>endpoints REST</span></div>
-    <div class="stat"><b>87</b><span>migrations de base</span></div>
-    <div class="stat"><b>≈ 120 000</b><span>lignes sur 3 applications</span></div>
-    <div class="stat"><b>≈ 31 000</b><span>lignes de tests</span></div>
-  </div>
 
   <ul class="chips" aria-label="Technologies">
     <li>FastAPI</li><li>SQLAlchemy async</li><li>PostgreSQL / PostGIS</li><li>Redis + Arq</li><li>Flutter · Riverpod · Drift</li><li>Next.js 16</li><li>Docker</li><li>pytest · Hypothesis · Locust</li>
@@ -127,7 +121,7 @@ dialog button{position:absolute;top:-14px;right:-6px;width:36px;height:36px;bord
     <div>
       <h3>Ce que j'ai construit</h3>
       <ul class="points">
-        <li><b>Un produit complet, seul, en moins de 5 mois :</b> une API FastAPI, une app mobile Flutter pour les commerçants et un back-office Next.js pour les sociétés de fret.</li>
+        <li><b>Un produit complet, seul, en moins de 5 mois :</b> une API FastAPI, une app mobile Flutter pour les commerçants et un back-office Next.js pour les sociétés de fret, avec une suite de tests complète (pytest, Hypothesis, tests de charge Locust).</li>
         <li><b>Isolation multi-tenant dans la couche d'accès aux données</b>, pas route par route : un filtre oublié ne peut pas exposer les données d'un autre client. Un audit interne a trouvé et fait corriger une écriture inter-commerçants dans la synchro.</li>
         <li><b>Synchro hors-ligne par journal de mouvements idempotent</b> plutôt que « dernier écrit gagne » : le stock reste juste après une coupure réseau, et une erreur sur une ligne ne bloque plus le lot entier.</li>
         <li><b>Industrialisation :</b> tâches asynchrones Arq, webhooks sortants, CI par application, changelog et décisions d'architecture documentés.</li>
